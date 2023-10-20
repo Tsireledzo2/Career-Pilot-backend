@@ -17,6 +17,7 @@ public class JobSeekerProfile {
     private String lastName;
     private String Address;
     private String Email;
+    private String password;
 
     public JobSeekerProfile() {
     }
@@ -59,6 +60,14 @@ public class JobSeekerProfile {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
 
