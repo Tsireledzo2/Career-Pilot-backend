@@ -15,7 +15,7 @@ import java.time.LocalDate;
         private String graduationDate;
         @ManyToOne
         @JoinColumn(name = "job_seeker_profile_id")
-        private JobSeekerProfile jobSeekerProfile;
+        private JobSeekerAccount jobSeekerProfile;
         public Education() {
         }
 

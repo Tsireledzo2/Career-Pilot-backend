@@ -15,7 +15,7 @@ public class Experience {
     private String endDate;
     @ManyToOne
     @JoinColumn(name = "job_seeker_profile_id")
-    private JobSeekerProfile jobSeekerProfile;
+    private JobSeekerAccount jobSeekerProfile;
     public Experience() {
     }
 
