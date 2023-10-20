@@ -13,15 +13,24 @@ public class CompanyProfileServiceImpl implements CompanyProfileService {
     @Autowired
     private CompanyProfileRepository companyProfileRepository;
 
-
     @Override
-    public CompanyProfile saveCompanyProfile(CompanyProfile companyProfile) {
+    public CompanyProfile create(CompanyProfile companyProfile) {
         return companyProfileRepository.save(companyProfile);
     }
 
     @Override
-    public List<CompanyProfile> getAll() {
-        return this.companyProfileRepository.findAll();
+    public CompanyProfile read(String email) {
+        return companyProfileRepository.findById(email).orElse(null);
+    }
+
+    @Override
+    public CompanyProfile update(CompanyProfile companyProfile) {
+        return null;
+    }
+
+    @Override
+    public boolean delete(String s) {
+        return false;
     }
 }
 

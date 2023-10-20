@@ -17,14 +17,12 @@ public class CompanyProfileController {
 
 
     @PostMapping("/add")
-    public String add(@RequestBody CompanyProfile companyProfile){
-        companyProfileService.saveCompanyProfile(companyProfile);
-        return "New Job Seeker Profile is added";
-
+    public CompanyProfile add(@RequestBody CompanyProfile companyProfile){
+        return companyProfileService.create(companyProfile);
     }
 
-    @GetMapping("/getAll")
-    public List<CompanyProfile> getAllCompanyProfiles(){
-        return companyProfileService.getAll();
+    @GetMapping("/getCompany/{email}")
+    public CompanyProfile getCompanyByEmail(@PathVariable String email){
+        return companyProfileService.read(email);
     }
 }
