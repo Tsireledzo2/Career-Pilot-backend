@@ -1,11 +1,11 @@
 package za.ac.cput.service;
 
-import za.ac.cput.domain.UserAccount;
+import za.ac.cput.domain.JobSeekerAccount;
 
 import java.util.List;
 
-public interface IUserAccountService extends IService<UserAccount, String>{
-    public List<UserAccount> getAll();
-    public UserAccount readByEmail(String userEmail);
+public interface IUserAccountService extends IService<JobSeekerAccount, String>{
+    public List<JobSeekerAccount> getAll();
+    public JobSeekerAccount readByEmail(String userEmail);
 
 }

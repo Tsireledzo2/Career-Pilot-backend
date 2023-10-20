@@ -2,7 +2,7 @@ package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.domain.UserAccount;
+import za.ac.cput.domain.JobSeekerAccount;
 import za.ac.cput.service.impl.UserAccountService;
 
 import java.util.List;
@@ -14,18 +14,18 @@ public class UserAccountController {
         @Autowired
         public UserAccountService userAccountService;
         @PostMapping("/createUser")
-        public UserAccount create(@RequestBody UserAccount userAccount){
-            return userAccountService.create(userAccount);
+        public JobSeekerAccount create(@RequestBody JobSeekerAccount jobSeekerAccount){
+            return userAccountService.create(jobSeekerAccount);
         }
 
         @GetMapping("/getUser/{userAccountID}")
-        public UserAccount read(@PathVariable String userAccountID){
+        public JobSeekerAccount read(@PathVariable String userAccountID){
             return userAccountService.read(userAccountID);
         }
 
         @PostMapping("/updateUser")
-        public UserAccount update(@RequestBody UserAccount userAccount){
-            return userAccountService.update(userAccount);
+        public JobSeekerAccount update(@RequestBody JobSeekerAccount jobSeekerAccount){
+            return userAccountService.update(jobSeekerAccount);
         }
 
         @DeleteMapping("/deleteUser/{userAccountID}")
@@ -34,12 +34,12 @@ public class UserAccountController {
         }
 
         @GetMapping("/getAllUser")
-        public List<UserAccount> getAll(){
+        public List<JobSeekerAccount> getAll(){
             return userAccountService.getAll();
         }
 
         @GetMapping("/getUserByEmail/{userEmail}")
-        public UserAccount readyEmail(@PathVariable String userEmail){
+        public JobSeekerAccount readyEmail(@PathVariable String userEmail){
             return userAccountService.readByEmail(userEmail);
         }
 }

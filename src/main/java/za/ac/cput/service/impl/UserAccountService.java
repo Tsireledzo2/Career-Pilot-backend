@@ -2,7 +2,7 @@ package za.ac.cput.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.UserAccount;
+import za.ac.cput.domain.JobSeekerAccount;
 import za.ac.cput.repository.IUserAccountRepository;
 import za.ac.cput.service.IUserAccountService;
 
@@ -19,19 +19,19 @@ public class UserAccountService implements IUserAccountService {
 
 
     @Override
-    public UserAccount create(UserAccount userAccount) {
-        return userAccountRepository.save(userAccount);
+    public JobSeekerAccount create(JobSeekerAccount jobSeekerAccount) {
+        return userAccountRepository.save(jobSeekerAccount);
     }
 
     @Override
-    public UserAccount read(String userAccount) {
-        return userAccountRepository.findById(userAccount).orElse(null);
+    public JobSeekerAccount read(String email) {
+        return userAccountRepository.findById(email).orElse(null);
     }
 
     @Override
-    public UserAccount update(UserAccount userAccount) {
-        if(this.userAccountRepository.existsById(userAccount.getAccountID()))
-            return this.userAccountRepository.save(userAccount);
+    public JobSeekerAccount update(JobSeekerAccount jobSeekerAccount) {
+        if(this.userAccountRepository.existsById(jobSeekerAccount.getEmail()))
+            return this.userAccountRepository.save(jobSeekerAccount);
         return null;
     }
 
@@ -45,12 +45,12 @@ public class UserAccountService implements IUserAccountService {
     }
 
     @Override
-    public List<UserAccount> getAll() {
+    public List<JobSeekerAccount> getAll() {
         return userAccountRepository.findAll();
     }
 
     @Override
-    public UserAccount readByEmail(String userEmail) {
+    public JobSeekerAccount readByEmail(String userEmail) {
         return userAccountRepository.readByEmail(userEmail);
     }
 }
