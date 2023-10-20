@@ -1,11 +1,9 @@
 package za.ac.cput.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import javax.annotation.processing.Generated;
+import java.util.List;
 
 @Entity
 public class JobSeekerProfile {
@@ -18,6 +16,11 @@ public class JobSeekerProfile {
     private String Address;
     private String Email;
 
+    @OneToMany(mappedBy = "jobSeekerProfile", cascade = CascadeType.ALL)
+    private List<Education> educations;
+
+    @OneToMany(mappedBy = "jobSeekerProfile", cascade = CascadeType.ALL)
+    private List<Experience> experiences;
     public JobSeekerProfile() {
     }
 

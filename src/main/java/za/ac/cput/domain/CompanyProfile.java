@@ -18,6 +18,7 @@ public class CompanyProfile {
     private String userType;
     private String password;
 
+
     public CompanyProfile() {
 
     }
