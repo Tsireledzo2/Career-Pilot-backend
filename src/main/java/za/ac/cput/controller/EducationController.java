@@ -24,7 +24,7 @@ public class EducationController {
         return educationRepository.save(education);
     }
 
-    @GetMapping("/retrieve") // Retrieve all education information
+    @GetMapping // Retrieve all education information
     public List<Education> getAllEducationInfo() {
         return educationService.getAllEducationInfo();
     }

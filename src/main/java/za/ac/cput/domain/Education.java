@@ -1,9 +1,7 @@
 package za.ac.cput.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
     @Entity
@@ -15,7 +13,9 @@ import java.time.LocalDate;
         private String qualificationName;
         private String startDate;
         private String graduationDate;
-
+        @ManyToOne
+        @JoinColumn(name = "job_seeker_profile_id")
+        private JobSeekerProfile jobSeekerProfile;
         public Education() {
         }
 
