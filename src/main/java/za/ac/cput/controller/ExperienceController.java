@@ -23,11 +23,11 @@ public class ExperienceController {
     public Experience createExperience(@RequestBody Experience experience) {
         return experienceRepository.save(experience);
     }
-  @PostMapping("/retrieveAll")
-  public List<Experience> getAllExperienceInfo(){
-        return experienceService.getAllupdateExperience();
-  }
 
+    @GetMapping // Retrieve all education information
+    public List<Experience> getAllExperienceInfo() {
+        return experienceService.getAllupdateExperience();
+    }
 
 
     @PutMapping("/update/{id}")
@@ -51,11 +51,10 @@ public class ExperienceController {
             return "Education information updated";
         } else {
             return "Education not found";
+
+
         }
+
+
     }
-
-
 }
-
-
-

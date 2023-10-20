@@ -17,6 +17,7 @@ public class CompanyProfile {
     private String description;
     private String perks;
 
+
     public CompanyProfile() {
 
     }
