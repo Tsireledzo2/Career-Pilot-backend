@@ -2,35 +2,37 @@ package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.domain.educationinfo;
-import za.ac.cput.domain.updateExperience;
-import za.ac.cput.service.IupdateExperienceService;
+import za.ac.cput.domain.Experience;
+import za.ac.cput.repository.ExperienceRepository;
+import za.ac.cput.service.ExperienceService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/Experience")
-@CrossOrigin
-public class updateExperinceController {
+@CrossOrigin(origins = "http://localhost:5173")
+public class ExperienceController {
 
     @Autowired
-    private IupdateExperienceService iupdateExperienceService;
+    private ExperienceService experienceService;
+    @Autowired
+    private ExperienceRepository experienceRepository;
 
-    @PostMapping("add")
-    public String add(@RequestBody updateExperience exp){
-        iupdateExperienceService.saveupdateExperience(exp);
-        return "new experience is added";
+
+    @PostMapping("/saveExperience")
+    public Experience createExperience(@RequestBody Experience experience) {
+        return experienceRepository.save(experience);
     }
+  @PostMapping("/retrieveAll")
+  public List<Experience> getAllExperienceInfo(){
+        return experienceService.getAllupdateExperience();
+  }
 
 
-    @GetMapping // Retrieve all education information
-    public List<updateExperience> getAllEducationInfo() {
-        return iupdateExperienceService.getAllupdateExperience();
-    }
 
     @PutMapping("/update/{id}")
-    public String update(@PathVariable Long id, @RequestBody updateExperience updatedEdu) {
-        updateExperience existingEdu = iupdateExperienceService.getEperienceyId(id);
+    public String update(@PathVariable Long id, @RequestBody Experience updatedEdu) {
+        Experience existingEdu = experienceService.getEperienceyId(id);
         if (existingEdu != null) {
             // Print values before updating
             System.out.println("Existing Start Date: " + existingEdu.getStartDate());
@@ -41,8 +43,7 @@ public class updateExperinceController {
             existingEdu.setRoleName(updatedEdu.getRoleName());
             existingEdu.setStartDate(updatedEdu.getStartDate());
             existingEdu.setEndDate(updatedEdu.getEndDate());
-
-            iupdateExperienceService.saveupdateExperience(existingEdu);
+            experienceService.saveupdateExperience(existingEdu);
 
             // Print values after updating
             System.out.println("Updated Start Date (after): " + existingEdu.getStartDate());

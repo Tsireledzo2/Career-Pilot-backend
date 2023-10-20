@@ -7,16 +7,16 @@ import jakarta.persistence.Id;
 import java.time.LocalDate;
 
     @Entity
-    public class educationinfo  {
+    public class Education {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String institutionName;
         private String qualificationName;
-        private LocalDate startDate;
-        private LocalDate graduationDate;
+        private String startDate;
+        private String graduationDate;
 
-        public educationinfo() {
+        public Education() {
         }
 
         public Long getId() {
@@ -43,32 +43,24 @@ import java.time.LocalDate;
             this.qualificationName = qualificationName;
         }
 
-        public LocalDate getStartDate() {
+        public String getStartDate() {
             return startDate;
         }
 
-        public void setStartDate(LocalDate startDate) {
+        public void setStartDate(String startDate) {
             this.startDate = startDate;
         }
 
-        public LocalDate getGraduationDate() {
+        public String getGraduationDate() {
             return graduationDate;
         }
 
-        public void setGraduationDate(LocalDate graduationDate) {
+        public void setGraduationDate(String graduationDate) {
             this.graduationDate = graduationDate;
         }
 
 
-        public void setStartDateAsString(String startDate) {
 
-            this.startDate = LocalDate.parse(startDate);
-        }
-
-        public void setGraduationDateAsString(String graduationDate) {
-
-            this.graduationDate = LocalDate.parse(graduationDate);
-        }
     }
 
 
