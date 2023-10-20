@@ -4,10 +4,6 @@ import za.ac.cput.domain.CompanyProfile;
 
 import java.util.List;
 
-public interface CompanyProfileService  {
+public interface CompanyProfileService  extends IService<CompanyProfile,String>{
 
-
-    public CompanyProfile saveCompanyProfile(CompanyProfile companyProfileProfile);
-
-    public List<CompanyProfile> getAll();
 }

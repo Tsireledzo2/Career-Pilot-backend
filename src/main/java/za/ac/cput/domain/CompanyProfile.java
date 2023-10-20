@@ -8,26 +8,27 @@ import jakarta.persistence.Id;
 @Entity
 public class CompanyProfile {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int companyProfileId;
+    private String email;
     private String companyName;
     private String website;
     private String address;
     private String summary;
     private String description;
     private String perks;
+    private String userType;
+    private String password;
 
 
     public CompanyProfile() {
 
     }
 
-    public int getCompanyProfileId() {
-        return companyProfileId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCompanyProfileId(int companyProfileId) {
-        this.companyProfileId = companyProfileId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getCompanyName() {
@@ -76,6 +77,22 @@ public class CompanyProfile {
 
     public void setPerks(String perks) {
         this.perks = perks;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
 
