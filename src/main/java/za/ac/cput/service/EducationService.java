@@ -1,13 +1,13 @@
 package za.ac.cput.service;
 
-import za.ac.cput.domain.educationinfo;
+import za.ac.cput.domain.Education;
 
 import java.util.List;
 
 public interface EducationService {
-    public educationinfo saveEducation(educationinfo education);
+    public Education saveEducation(Education education);
 
-    educationinfo getEducationById(Long id); // Add this method to retrieve by ID
+    Education getEducationById(Long id); // Add this method to retrieve by ID
 
-    List<educationinfo> getAllEducationInfo(); // Add this method to retrieve all
+    List<Education> getAllEducationInfo(); // Add this method to retrieve all
 }
