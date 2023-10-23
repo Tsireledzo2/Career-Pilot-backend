@@ -13,9 +13,9 @@ public class Experience {
     private String roleName;
     private String startDate;
     private String endDate;
-    @ManyToOne
-    @JoinColumn(name = "job_seeker_profile_id")
-    private JobSeekerProfile jobSeekerProfile;
+//    @ManyToOne
+//    @JoinColumn(name = "job_seeker_profile_id")
+//    private JobSeekerProfile jobSeekerProfile;
     public Experience() {
     }
 
